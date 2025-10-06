@@ -39,16 +39,16 @@
 </head>
 <body>
 
-<h1>Random Image Search</h1>
+<h1>Random Binary Image</h1>
 <button id="loadBtn">Next</button>
 <img id="randomImage" alt="Random Image Loading..." />
 
 <script>
-const query = "binary"; // <-- change this to any keyword you want
+const query = "Binary"; // <--- change this to anything (e.g., "city", "cat", "code")
 
-async function loadRandomImage() {
-  // Using picsum.photos ensures a new random image every time
-  const url = `https://picsum.photos/800/600?random=${Date.now()}`;
+function loadRandomImage() {
+  // Use Unsplash keyword search with a cache-buster parameter
+  const url = `https://source.unsplash.com/800x600/?${encodeURIComponent(query)}&sig=${Date.now()}`;
   
   const img = document.getElementById('randomImage');
   img.src = url;
