@@ -1,1 +1,3 @@
-# bi-dater.github.io
+# Bi Dater
+
+[Website](https://bi-dater.github.io/)
