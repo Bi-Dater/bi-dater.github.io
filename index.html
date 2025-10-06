@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bi Dater</title>
+<style>
+  body {
+    background: #111;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: monospace;
+  }
+  img {
+    max-width: 90%;
+    max-height: 80vh;
+    border: 3px solid #0f0;
+    border-radius: 10px;
+  }
+  input, button {
+    margin: 10px;
+    padding: 8px;
+    font-size: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Random Image Search</h1>
+<button id="loadBtn">Next</button>
+<img id="randomImage" alt="Random Image Loading..." />
+
+<script>
+const query = "Binary";
+  
+async function loadRandomImage() {
+  // DuckDuckGo random image proxy via Bing
+  const url = `https://source.unsplash.com/random/800x600/?${encodeURIComponent(query)}&t=${Date.now()}`;
+  
+  const img = document.getElementById('randomImage');
+  img.src = url;
+}
+
+loadRandomImage();
+
+document.getElementById('loadBtn').addEventListener('click', loadRandomImage);
+</script>
+
+</body>
+</html>
